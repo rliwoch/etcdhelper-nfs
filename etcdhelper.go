@@ -110,7 +110,7 @@ func main() {
 	switch action {
 	case "ls":
 		_, err = listKeys(client, key)
-    case "change-storage-class-nfs-server":
+	case "change-storage-class-nfs-server":
 		_, err = changeStorageClassNFSServer(client, flag.Arg(1), flag.Arg(2))
 	case "get":
 		err = getKey(client, key)
@@ -244,7 +244,7 @@ func changeMonitorsList(client *clientv3.Client, pvName, list string) error {
 }
 
 func changeStorageClassNFSServer(client *clientv3.Client, storageClass string, newNFSServer string) (string, error) {
-    decoder := scheme.Codecs.UniversalDeserializer()
+	decoder := scheme.Codecs.UniversalDeserializer()
 	var resp *clientv3.GetResponse
 	var err error
 
@@ -254,11 +254,11 @@ func changeStorageClassNFSServer(client *clientv3.Client, storageClass string, n
 	}
 
 	for _, kv := range resp.Kvs {
-        obj, _, _ := decoder.Decode(kv.Value, nil, nil)
+		obj, _, _ := decoder.Decode(kv.Value, nil, nil)
 
-       	pv := obj.(*v1.PersistentVolume)
+		pv := obj.(*v1.PersistentVolume)
 
-        if pv.Spec.StorageClassName == storageClass && pv.Spec.NFS != nil {
+		if pv.Spec.StorageClassName == storageClass && pv.Spec.NFS != nil {
 			fmt.Printf("Processing %s. Current NFS Server configured as: %s \n", string(kv.Key), pv.Spec.NFS.Server)
 
 			pv.Spec.NFS.Server = newNFSServer
@@ -273,7 +273,7 @@ func changeStorageClassNFSServer(client *clientv3.Client, storageClass string, n
 			} else {
 				fmt.Printf("%s modified, new NFS Server value: %s\n", string(kv.Key), newNFSServer)
 			}
-        }
+		}
 	}
 	fmt.Println("Please reboot your k8s node now for the changes to make effect (volumes need to be remounted)")
 
