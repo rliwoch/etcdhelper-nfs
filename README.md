@@ -6,10 +6,10 @@ One new function in this release: `changeStorageClassNFSServer`
 
 This repo has a new functionality described in the article:
 
-* «**[Hacking Kubernetes etcd for (personal) profit](https://)**».
+* «**[Hacking Kubernetes etcd for (personal) profit](https://medium.com/@rafal.liwoch/hacking-kubernetes-etcd-for-personal-profit-2e43ee1037ee) **».
 
 For the original Flant team article see:
-* «**[How to modify etcd data of your Kubernetes directly (without K8s API)](https://blog.flant.com/how-to-modify-etcd-data-of-your-kubernetes-directly-without-k8s-api/)**».
+* «**[How to modify etcd data of your Kubernetes directly (without K8s API)](https://blog.flant.com/how-to-modify-etcd-data-of-your-kubernetes-directly-without-k8s-api/) **».
 
 In short, it is designed to change the PV NFS Sever coordinates when using https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
 # Using etcdhelper
