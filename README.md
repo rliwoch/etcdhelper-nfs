@@ -11,6 +11,7 @@ This repo has a new functionality described in the article:
 For the original Flant team article see:
 * «**[How to modify etcd data of your Kubernetes directly (without K8s API)](https://blog.flant.com/how-to-modify-etcd-data-of-your-kubernetes-directly-without-k8s-api/)**».
 
+In short, it is designed to change the PV NFS Sever coordinates when using https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
 # Using etcdhelper
 
 ## Build
@@ -33,4 +34,5 @@ etcdhelper binary will be created in the current directory. Use `GOOS=darwin` to
 
 # Status
 
-This enhanced version of etcdhelper is **PoC (proof of concept)**. Use it on your own risk.
+This Double-tap enhanced version of etcdhelper is **PoC (proof of concept)**. Use it on your own risk.
+Before making any changes please make sure you BACKUP your `etcd` server.
